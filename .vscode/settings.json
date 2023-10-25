@@ -1,0 +1,11 @@
+{
+    "python.analysis.extraPaths": [
+        "./code-challenge/app",
+        "./app/app/db"
+    ],
+    "python.testing.pytestArgs": [
+        "app"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}

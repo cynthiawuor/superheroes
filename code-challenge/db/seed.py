@@ -11,10 +11,10 @@ with app.app_context():
 
  # 🦸‍♀️ Seeding powers...
 Powers = [
-  power{ name: "super strength", description: "gives the wielder super-human strengths" },
-  power{ name: "flight", description: "gives the wielder the ability to fly through the skies at supersonic speed" },
-  power{ name: "super human senses", description: "allows the wielder to use her senses at a super-human level" },
-  power{ name: "elasticity", description: "can stretch the human body to extreme lengths" }
+  power{name: "super strength", description: "gives the wielder super-human strengths"},
+  power{name: "flight", description: "gives the wielder the ability to fly through the skies at supersonic speed"},
+  power{name: "super human senses", description: "allows the wielder to use her senses at a super-human level"},
+  power{name: "elasticity", description: "can stretch the human body to extreme lengths"}
 ]
 
 db.session.add_all(Powers)
@@ -34,7 +34,7 @@ Heroes = [
   hero{ name: "Elektra Natchios", super_name: "Elektra" }
 ]
 
-db.session.add_all(heroes)
+db.session.add_all(Heroes)
 db.session.commit()
 
 powers = Power.query.all()
@@ -45,6 +45,6 @@ for hero in Hero.query.all():
   for i in range(randint(1,3)):
     # get a random power
     power = select(power)
-    hero_power = HeroPower(hero=hero power=power strength=select(strengths))
+    hero_power = HeroPower("hero=hero power=power strength=select(strengths)")
     db.session.add(hero_power)
 db.session.commit()
